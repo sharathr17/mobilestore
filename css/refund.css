@@ -1,0 +1,272 @@
+/* Refund Page Styling */
+
+:root {
+    --primary: #3498db;
+    --primary-dark: #2980b9;
+    --secondary: #f8f9fa;
+    --text-color: #2c3e50;
+    --text-muted: #6c757d;
+    --border-color: #ddd;
+    --success-bg: #d4edda;
+    --success-color: #155724;
+    --error-bg: #f8d7da;
+    --error-color: #721c24;
+    --form-bg: #ffffff;
+}
+
+/* Main Section */
+.refund-section {
+    padding: 50px 20px;
+    background-color: var(--secondary);
+    min-height: 70vh;
+}
+
+.refund-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--text-color);
+    position: relative;
+}
+
+.refund-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary);
+}
+
+/* Form Container */
+.refund-container {
+    background-color: var(--form-bg);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
+.refund-container:hover {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Order Summary */
+.order-summary {
+    background-color: var(--secondary);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-left: 4px solid var(--primary);
+}
+
+.order-summary h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+/* Order Items Table */
+.order-items {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.order-items th, .order-items td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.order-items th {
+    background-color: var(--secondary);
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.order-items tr:last-child td {
+    border-bottom: none;
+}
+
+.order-items tr:hover td {
+    background-color: rgba(52, 152, 219, 0.05);
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.form-group select, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group select:focus, .form-group textarea:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.25);
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Request Type Selector */
+.request-type-selector {
+    display: flex;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.request-type-selector label {
+    flex: 1;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    background-color: var(--secondary);
+    transition: all 0.3s;
+    font-weight: 600;
+    color: var(--text-color);
+    border: none;
+}
+
+.request-type-selector label.active {
+    background-color: var(--primary);
+    color: white;
+}
+
+.request-type-selector input[type="radio"] {
+    display: none;
+}
+
+/* Success and Error Messages */
+.message {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.message i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.success {
+    background-color: var(--success-bg);
+    color: var(--success-color);
+    border-left: 4px solid var(--success-color);
+}
+
+.error {
+    background-color: var(--error-bg);
+    color: var(--error-color);
+    border-left: 4px solid var(--error-color);
+}
+
+/* Button Styles */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.btn i {
+    margin-right: 8px;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .refund-container {
+        padding: 20px;
+    }
+    
+    .request-type-selector {
+        flex-direction: column;
+    }
+    
+    .request-type-selector label {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    .refund-container {
+        padding: 15px;
+    }
+    
+    .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .order-items {
+        font-size: 14px;
+    }
+}

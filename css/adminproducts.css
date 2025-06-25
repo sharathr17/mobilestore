@@ -1,0 +1,117 @@
+/* Admin Products Page Styling */
+:root {
+    --primary: #4361ee;
+    --primary-dark: #3a0ca3;
+    --primary-light: #7209b7;
+    --accent: #f72585;
+    --text-color: #2b2d42;
+    --text-muted: #6c757d;
+    --text-light: #ffffff;
+    --background: #f8f9fa;
+    --border-color: #dee2e6;
+    --shadow-color: rgba(0, 0, 0, 0.05);
+    --success-color: #38b000;
+    --warning-color: #ffaa00;
+    --error-color: #d90429;
+}
+
+/* Product Form Styles */
+.product-form {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.product-form h3 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-color);
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+}
+
+.product-form h3 i {
+    margin-right: 10px;
+    color: var(--primary);
+}
+
+/* Filter and Search Styles */
+.filter-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px var(--shadow-color);
+}
+
+.filter-form {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.filter-form select {
+    padding: 10px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: #fff;
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .admin-container {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        min-height: auto;
+        position: static;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .filter-bar {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    
+    .filter-form, .search-form {
+        width: 100%;
+    }
+    
+    .search-form input {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .product-table-container {
+        overflow-x: auto;
+    }
+    
+    .product-table {
+        min-width: 800px;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+}

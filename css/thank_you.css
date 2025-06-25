@@ -1,0 +1,289 @@
+/* Thank You Page Specific Styling */
+
+:root {
+    --confirmation-bg: #ffffff;
+    --confirmation-border: #dddddd;
+    --confirmation-shadow: rgba(0, 0, 0, 0.1);
+    --table-header-bg: #f4f4f4;
+    --shipping-bg: #f9f9f9;
+    --shipping-border: #007bff;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --secondary-color: #6c757d;
+    --text-color: #333333;
+    --text-muted: #6c757d;
+}
+
+/* Main Confirmation Section */
+.confirmation-section {
+    padding: 50px 0;
+    background-color: var(--payment-bg, #f8f9fa);
+    min-height: 70vh;
+}
+
+.confirmation-section h2 {
+    color: var(--primary-dark, #333);
+    margin-bottom: 20px;
+    font-size: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.confirmation-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary, #007bff);
+}
+
+/* Order Confirmation Container */
+.order-confirmation {
+    background-color: var(--confirmation-bg);
+    border-radius: 10px;
+    box-shadow: 0 5px 20px var(--confirmation-shadow);
+    padding: 30px;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+}
+
+.order-confirmation:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Order Details */
+.order-details {
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--confirmation-border);
+    padding-bottom: 20px;
+}
+
+.order-details h3 {
+    color: var(--success-color);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.order-details h3::before {
+    content: '✓';
+    display: inline-block;
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(40, 167, 69, 0.1);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+}
+
+.order-details p {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.order-details strong {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+/* Status Badge (reusing from myorder.css) */
+.status-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-left: 10px;
+}
+
+/* Shipping Information */
+.shipping-info {
+    background-color: var(--shipping-bg);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-left: 4px solid var(--shipping-border);
+}
+
+.shipping-info h3 {
+    color: var(--primary-dark, #333);
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+}
+
+.shipping-info h3::before {
+    content: '📦';
+    margin-right: 10px;
+}
+
+.shipping-info p {
+    margin: 5px 0;
+    color: var(--text-color);
+}
+
+/* Order Items Table */
+.order-items {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.order-items th {
+    background-color: var(--table-header-bg);
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: 600;
+    color: var(--text-color);
+    border-bottom: 1px solid var(--confirmation-border);
+}
+
+.order-items td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--confirmation-border);
+    color: var(--text-color);
+}
+
+.order-items tr:last-child td {
+    border-bottom: none;
+}
+
+.order-items tr:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.product-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+    border-radius: 4px;
+}
+
+.product-info {
+    display: flex;
+    align-items: center;
+}
+
+/* Action Buttons */
+.action-buttons {
+    text-align: center;
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-primary {
+    background-color: var(--primary, #007bff);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark, #0069d9);
+}
+
+.btn-danger {
+    background-color: var(--danger-color);
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .order-confirmation {
+        padding: 20px;
+    }
+    
+    .confirmation-section h2 {
+        font-size: 1.8rem;
+    }
+    
+    .order-details h3 {
+        font-size: 1.3rem;
+    }
+    
+    .order-items {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .order-confirmation {
+        padding: 15px;
+    }
+    
+    .confirmation-section h2 {
+        font-size: 1.6rem;
+    }
+    
+    .order-details h3 {
+        font-size: 1.2rem;
+    }
+    
+    .product-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .product-image {
+        margin-bottom: 10px;
+        width: 80px;
+        height: 80px;
+    }
+}

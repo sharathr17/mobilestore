@@ -1,0 +1,300 @@
+/* Feedback & Newsletter Page Styling */
+
+:root {
+    --primary: #3498db;
+    --primary-dark: #2980b9;
+    --secondary: #f8f9fa;
+    --text-color: #2c3e50;
+    --text-muted: #6c757d;
+    --border-color: #ddd;
+    --success-bg: #d4edda;
+    --success-color: #155724;
+    --error-bg: #f8d7da;
+    --error-color: #721c24;
+    --star-color: #f39c12;
+    --tab-active-color: #3498db;
+    --form-bg: #ffffff;
+    --benefits-bg: #f8f9fa;
+}
+
+/* Main Section */
+.feedback-section {
+    padding: 50px 20px;
+    background-color: var(--payment-bg, #f8f9fa);
+    min-height: 70vh;
+}
+
+.feedback-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--text-color);
+    position: relative;
+}
+
+.feedback-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary);
+}
+
+/* Tabs Navigation */
+.tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 30px;
+}
+
+.tab {
+    padding: 15px 30px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+    border-bottom: 3px solid transparent;
+    color: var(--text-color);
+}
+
+.tab i {
+    margin-right: 8px;
+}
+
+.tab:hover {
+    color: var(--primary);
+}
+
+.tab.active {
+    color: var(--tab-active-color);
+    border-bottom: 3px solid var(--tab-active-color);
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Form Container */
+.form-container {
+    background-color: var(--form-bg);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
+.form-container:hover {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.form-group input, 
+.form-group textarea, 
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus, 
+.form-group select:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.25);
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* Star Rating */
+.rating-container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+.rating-container input {
+    display: none;
+}
+
+.rating-container label {
+    cursor: pointer;
+    font-size: 30px;
+    color: #ddd;
+    margin-right: 10px;
+    transition: color 0.3s;
+}
+
+.rating-container label:hover,
+.rating-container label:hover ~ label,
+.rating-container input:checked ~ label {
+    color: var(--star-color);
+}
+
+/* Submit Button */
+.submit-btn {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    display: inline-flex;
+    align-items: center;
+}
+
+.submit-btn i {
+    margin-right: 8px;
+}
+
+.submit-btn:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+/* Success and Error Messages */
+.success-message {
+    background-color: var(--success-bg);
+    color: var(--success-color);
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.success-message i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.error-message {
+    background-color: var(--error-bg);
+    color: var(--error-color);
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.error-message i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+/* Newsletter Benefits */
+.subscribe-benefits {
+    margin-top: 30px;
+    background-color: var(--benefits-bg);
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary);
+}
+
+.subscribe-benefits h3 {
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.benefits-list {
+    list-style: none;
+    padding: 0;
+}
+
+.benefits-list li {
+    margin-bottom: 10px;
+    padding-left: 30px;
+    position: relative;
+    color: var(--text-color);
+}
+
+.benefits-list li:before {
+    content: '\f00c';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 20px;
+    }
+    
+    .tabs {
+        flex-direction: column;
+        border-bottom: none;
+    }
+    
+    .tab {
+        border-bottom: none;
+        border-left: 3px solid transparent;
+        padding: 10px 15px;
+    }
+    
+    .tab.active {
+        border-bottom: none;
+        border-left: 3px solid var(--tab-active-color);
+        background-color: rgba(52, 152, 219, 0.1);
+    }
+    
+    .rating-container label {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 576px) {
+    .form-container {
+        padding: 15px;
+    }
+    
+    .submit-btn {
+        width: 100%;
+    }
+    
+    .rating-container {
+        justify-content: center;
+    }
+}

@@ -1,0 +1,350 @@
+/* My Orders Page Specific Styling */
+
+:root {
+    --order-bg: #ffffff;
+    --order-border: #dddddd;
+    --order-header-border: #eeeeee;
+    --table-header-bg: #f4f4f4;
+    --badge-pending-bg: #ffc107;
+    --badge-pending-color: #000000;
+    --badge-processing-bg: #17a2b8;
+    --badge-processing-color: #ffffff;
+    --badge-shipped-bg: #6c757d;
+    --badge-shipped-color: #ffffff;
+    --badge-delivered-bg: #28a745;
+    --badge-delivered-color: #ffffff;
+    --badge-completed-bg: #28a745;
+    --badge-completed-color: #ffffff;
+    --badge-cancelled-bg: #dc3545;
+    --badge-cancelled-color: #ffffff;
+    --btn-view-bg: #007bff;
+    --btn-view-hover-bg: #0069d9;
+    --btn-view-color: #ffffff;
+}
+
+/* Main Orders Section */
+.orders-section {
+    padding: 50px 0;
+    background-color: var(--payment-bg, #f8f9fa);
+    min-height: 70vh;
+}
+
+.orders-section h2 {
+    color: var(--primary-dark, #333);
+    margin-bottom: 20px;
+    font-size: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.orders-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary, #007bff);
+}
+
+/* Orders Container */
+.orders-container {
+    background-color: var(--order-bg);
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+}
+
+.orders-container:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Order Card */
+.order-card {
+    border: 1px solid var(--order-border);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.order-card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.order-card:last-child {
+    margin-bottom: 0;
+}
+
+/* Order Header */
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid var(--order-header-border);
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.order-header h3 {
+    color: var(--primary-dark, #333);
+    margin: 0 0 5px 0;
+    font-size: 1.3rem;
+}
+
+.order-header p {
+    margin: 0;
+    color: var(--text-muted, #6c757d);
+    font-size: 0.95rem;
+}
+
+.order-header strong {
+    font-weight: 600;
+    color: var(--text-color, #333);
+}
+
+/* Status Badge */
+.status-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+.status-pending {
+    background-color: var(--badge-pending-bg);
+    color: var(--badge-pending-color);
+}
+
+.status-processing {
+    background-color: var(--badge-processing-bg);
+    color: var(--badge-processing-color);
+}
+
+.status-shipped {
+    background-color: var(--badge-shipped-bg);
+    color: var(--badge-shipped-color);
+}
+
+.status-delivered {
+    background-color: var(--badge-delivered-bg);
+    color: var(--badge-delivered-color);
+}
+
+.status-completed {
+    background-color: var(--badge-completed-bg);
+    color: var(--badge-completed-color);
+}
+
+.status-cancelled {
+    background-color: var(--badge-cancelled-bg);
+    color: var(--badge-cancelled-color);
+}
+
+/* Order Items Table */
+.order-items {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.order-items th {
+    background-color: var(--table-header-bg);
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: 600;
+    color: var(--text-color, #333);
+    border-bottom: 1px solid var(--order-border);
+}
+
+.order-items td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--order-border);
+    color: var(--text-color, #333);
+}
+
+.order-items tr:last-child td {
+    border-bottom: none;
+}
+
+.order-items tr:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* View Button */
+.btn-view {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: var(--btn-view-bg);
+    color: var(--btn-view-color);
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-view:hover {
+    background-color: var(--btn-view-hover-bg);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-view:active {
+    transform: translateY(0);
+}
+
+/* Empty Orders Message */
+.empty-orders {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.empty-orders p {
+    margin-bottom: 15px;
+    color: var(--text-muted, #6c757d);
+    font-size: 1.1rem;
+}
+
+.empty-orders a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary, #007bff);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.empty-orders a:hover {
+    background-color: var(--primary-dark, #0069d9);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .orders-container {
+        padding: 20px;
+    }
+    
+    .order-header {
+        flex-direction: column;
+    }
+    
+    .order-header div:last-child {
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .order-items {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    .orders-section h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .orders-container {
+        padding: 15px;
+    }
+    
+    .order-card {
+        padding: 15px;
+    }
+    
+    .order-header div:last-child {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .order-header div:last-child p {
+        margin-bottom: 5px;
+    }
+    
+    .orders-section h2 {
+        font-size: 1.6rem;
+    }
+    
+    .btn-view {
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+/* Add these styles to your existing myorder.css file */
+
+/* Product Status Indicators */
+.product-status {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.product-status i {
+    margin-right: 5px;
+}
+
+.product-status.in-stock {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: #28a745;
+}
+
+.product-status.low-stock {
+    background-color: rgba(255, 193, 7, 0.1);
+    color: #ffc107;
+}
+
+.product-status.out-of-stock {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+}
+
+.product-status.unknown {
+    background-color: rgba(108, 117, 125, 0.1);
+    color: #6c757d;
+}
+
+/* Responsive adjustments for the new column */
+@media (max-width: 768px) {
+    .order-items th:nth-child(5),
+    .order-items td:nth-child(5) {
+        display: none;
+    }
+    
+    /* Add a status indicator below the product name on mobile */
+    .order-items td:first-child {
+        position: relative;
+        padding-bottom: 30px;
+    }
+    
+    .order-items td:first-child .product-status {
+        position: absolute;
+        bottom: 5px;
+        left: 15px;
+        font-size: 0.75rem;
+    }
+}
